@@ -9,8 +9,9 @@ import ssl_socket
 import yeetshell
 
 import parsers
+import colored
 import cmd2
-
+import colorama
 
 class Cochra(cmd2.Cmd):
     """ Main Platform for Cochra """
@@ -21,11 +22,14 @@ class Cochra(cmd2.Cmd):
     def __init__(self):
         shortcuts = cmd2.DEFAULT_SHORTCUTS
         super().__init__(shortcuts=shortcuts)
-        self.prompt = 'Cochra#$!>> '
+        self.prompt = '{}{}{}Cochra#$!>> '.format(colorama.Fore.LIGHTBLUE_EX,colorama.Back.BLACK, colorama.Style.BRIGHT)
         self.persistent_history_file = '~/.cochra_hist'
         self._persistent_history_length = '400000000000'
-        
-
+        self.allow_style = cmd2.ansi.STYLE_TERMINAL
+    
+    @cmd2.with_argparser(parsers.colorscheme)
+    def do_colorscheme(self, args: argparse.Namespace):
+        print('TO DO')
 
     @cmd2.with_argparser(parsers.ssl_listener)
     def do_ssl_listener(self, args: argparse.Namespace):
