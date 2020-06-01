@@ -17,4 +17,4 @@ yeetshell.add_argument('-s', '--session', type=int, help='session to start yeeti
 colorscheme = argparse.ArgumentParser()
 colorscheme.add_argument('-l', '--listschemes', type=str, help='list out possible colorschemes')
 colorscheme.add_argument('-s', '--setscheme', type=int, help='Choose a number from list')
-colorscheme_list = '{}1. Default CochRa'.format(colorama.ansi.Fore.LIGHTBLUE_EX)
+#colorscheme_list = 
