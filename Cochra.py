@@ -3,10 +3,14 @@
 """
 
 """
+import pygments
 import argparse
 import random
 import ssl_socket
 import yeetshell
+from prompt_toolkit import prompt
+from prompt_toolkit.history import FileHistory
+from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 
 import parsers
 import colored
@@ -20,13 +24,12 @@ class Cochra(cmd2.Cmd):
     # default_to_shell = True
 
     def __init__(self):
-        shortcuts = cmd2.DEFAULT_SHORTCUTS
-        super().__init__(shortcuts=shortcuts)
-        self.prompt = '{}{}{}Cochra#$!>> '.format(colorama.Fore.LIGHTBLUE_EX,colorama.Back.BLACK, colorama.Style.BRIGHT)
+        super().__init__(completiontab=)
+        self.prompt = 'CochRa->'
         self.persistent_history_file = '~/.cochra_hist'
         self._persistent_history_length = '400000000000'
-        self.allow_style = cmd2.ansi.STYLE_TERMINAL
-    
+        #self.stdin=prompt()
+
     @cmd2.with_argparser(parsers.colorscheme)
     def do_colorscheme(self, args: argparse.Namespace):
         print('TO DO')
