@@ -14,13 +14,6 @@ def main():
         )
     cochra.run()
 
-    
-
-def hotdog_initiation():
-    hdstyle = Style.from_dict({
-        'bgcolor' : 'bg:#ff0000'
-    })
-    mainlayout.left_win.style=hdstyle
 
 if __name__ == '__main__':
     import sys

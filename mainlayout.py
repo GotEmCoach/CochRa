@@ -5,17 +5,37 @@ from prompt_toolkit.buffer import Buffer
 from prompt_toolkit.layout.controls import BufferControl, FormattedTextControl
 from prompt_toolkit.layout.layout import Layout
 from prompt_toolkit.layout.layout import UIControl
-
-top_right_buf = Buffer()
-bottom_right_buf = Buffer()
-left_buf = Buffer()
+from prompt_toolkit import PromptSession, prompt
+import styleguide
 
 
+def main():
+    Title = prompt('Enter the Title for the Main Window', )
+    leftprompt = PromptSession('MainCochra>> ')
+    prompts = createprompts()
+    buffers = assignbufs(prompts)
 
-left_win = Window(BufferControl(buffer=left_buf))
-top_right_win = Window(BufferControl(buffer=top_right_buf))
-bottom_right_win = Window(BufferControl(buffer=bottom_right_buf))
+    wins = assignwins(buffers)
 
+def createprompts():
+    
+
+
+def assignbufs(prompts):
+    buffers = [
+        top_right_buf = Buffer()
+        bottom_right_buf = Buffer()
+        left_buf = Buffer()
+    ]
+    return buffers
+
+def assignwins():
+    wins = [
+        left_win = Window(BufferControl(buffer=buffers), FormattedTextControl())
+        top_right_win = Window(BufferControl(buffer=top_right_buf))
+        bottom_right_win = Window(BufferControl(buffer=bottom_right_buf))
+    ]
+    return wins 
 
 body_container = HSplit(
     [
