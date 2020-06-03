@@ -9,17 +9,18 @@ from prompt_toolkit import PromptSession, prompt
 import styleguide
 
 
-def main():
-    Title = prompt('Enter the Title for the Main Window', )
-    leftprompt = PromptSession('MainCochra>> ')
-    prompts = createprompts()
+def buildapp():
+    prompts = createprompts(theme)
     buffers = assignbufs(prompts)
-
     wins = assignwins(buffers)
+    containers = buildcontainers(wins)
+
+
 
 def createprompts():
-    
-
+    Title = prompt('Enter the Title for the Main Window', )
+    leftprompt = PromptSession('MainCochra>> ')
+    leftprompt.style_transformation.transform_attrs()
 
 def assignbufs(prompts):
     buffers = [
