@@ -1,0 +1,29 @@
+## Yaml File for the themes
+
+# categories.yaml file
+
+
+
+
+Themes:
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  20:
+    - #E52424
+    - #9C9C9C
+    - #E4FD1C
+    - #CB5959
+    - #FF62CB
+    - #070D02
+
+
+
+ThemeMappings:
+  20: hotdogstand

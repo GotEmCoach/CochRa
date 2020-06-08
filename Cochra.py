@@ -7,7 +7,7 @@ from prompt_toolkit.styles import Style, style_from_pygments_cls
 
 def main():
     cochra = Application(
-        layout=mainlayout.initiallayout,
+        layout=mainlayout.buildapp(),
         key_bindings=keybinds.mainkeybinds, 
         full_screen=True,
         mouse_support=True
