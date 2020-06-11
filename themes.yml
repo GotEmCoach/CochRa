@@ -6,15 +6,6 @@
 
 
 Themes:
-  
-  
-  
-  
-  
-  
-  
-  
-  
   20:
     - #E52424
     - #9C9C9C
@@ -22,8 +13,6 @@ Themes:
     - #CB5959
     - #FF62CB
     - #070D02
+  Name: HotdogStand
 
 
-
-ThemeMappings:
-  20: hotdogstand
