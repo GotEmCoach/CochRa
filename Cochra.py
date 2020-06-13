@@ -5,16 +5,17 @@ import keybinds
 import mainlayout
 from prompt_toolkit.styles import Style, style_from_pygments_cls
 
-def main():
-    cochra = Application(
-        layout=mainlayout.buildapp(),
-        key_bindings=keybinds.mainkeybinds, 
-        full_screen=True,
-        mouse_support=True
-        )
-    cochra.run()
 
+class CochRa:
+    def __init__(self):
+        self.app = Application(
+            layout=mainlayout.mainlay(),
+            key_bindings=keybinds.mainkeybinds,
+            full_screen=True,
+            mouse_support=True,
+
+        )
 
 if __name__ == '__main__':
     import sys
-    main()
+    Cochra()

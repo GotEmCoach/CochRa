@@ -11,20 +11,20 @@ import pygments
 import yaml
 
 
-
-def buildapp():
-    colors = themeselection()
-    prompts = createprompts(theme)
-    buffers = assignbufs(prompts)
-    wins = assignwins(buffers)
-    containers = buildcontainers(wins)
-    return containers
+class mainlay:
+    def __init__(self):
+        self.colors = themeselection()
+        self.prompts = createprompts(theme)
+        self.buffers = assignbufs(prompts)
+        self.wins = assignwins(buffers)
+        self.containers = buildcontainers(wins)
 
 def themeselection():
     with open('themes.yml', 'r') as themes:
         themenames = yaml.load_all(themes, Loader=yaml.FullLoader)
         for themenum in themenames:
             themeselection = input('Enter the number selection for the theme: ')
+
 
 def createstyle(colors):
     currenttheme = Style([
@@ -46,6 +46,7 @@ def createprompts():
     Title = prompt('Enter the Title for the Main Window', )
     leftprompt = PromptSession('MainCochra>> ')
     leftprompt.style_transformation.transform_attrs()
+    return leftprompt
 
 def assignbufs(prompts):
     top_right_buf = Buffer(),
